@@ -5,14 +5,24 @@ import altair as alt
 import datetime
 from streamlit.column_config import NumberColumn
 
-# スタイルの読み込み 
-st.markdown('<link rel="stylesheet" href="style.css">', unsafe_allow_html=True)
+# スタイルの読み込み カスタムCSS
+st.markdown(
+    """
+    <style>
+    .header {
+        font-size: 30px;
+        color: #3EBEA1;
+        text-align: center;
+    }
+    """,
+    unsafe_allow_html=true
+)
 
 # データベースに接続
 conn = sqlite3.connect('famafinancial.db')
 c = conn.cursor()
 
-st.title('金融資産管理アプリ')
+st.title('<div class="custom-header">'金融資産管理アプリ'</div>', unsafe_allow_html=True)
 
 # Streamlitでカレンダーを表示
 min_date = datetime.date(1900, 1, 1)
