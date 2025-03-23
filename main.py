@@ -6,7 +6,7 @@ import datetime
 from streamlit.column_config import NumberColumn
 
 # スタイルの読み込み カスタムCSS
-st.markdown(
+st.title(
     """
     <style>
     .header {
