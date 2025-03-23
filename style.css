@@ -1,7 +1,7 @@
 /* ナビゲーションバーのスタイル */ 
-nav { 
-  background-color: #ffcc00;
-  color: #fff;
+title { 
+  background-color: #3EBEA1;
+  color: white;
   padding: 10px;
 }  
 
