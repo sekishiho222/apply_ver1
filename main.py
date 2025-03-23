@@ -6,7 +6,7 @@ import datetime
 from streamlit.column_config import NumberColumn
 
 # スタイルの読み込み カスタムCSS
-st.title(
+st.markdown(
     """
     <style>
     .header {
@@ -23,7 +23,7 @@ st.title(
 conn = sqlite3.connect('famafinancial.db')
 c = conn.cursor()
 
-st.title('<div class="header">金融資産管理アプリ</div>', unsafe_allow_html=True)
+st.markdown('<div class="header">金融資産管理アプリ</div>', unsafe_allow_html=True)
 
 # Streamlitでカレンダーを表示
 min_date = datetime.date(1900, 1, 1)
