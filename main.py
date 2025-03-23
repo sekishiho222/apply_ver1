@@ -5,6 +5,9 @@ import altair as alt
 import datetime
 from streamlit.column_config import NumberColumn
 
+# スタイルの読み込み 
+st.markdown('<link rel="stylesheet" href="style.css">', unsafe_allow_html=True)
+
 # データベースに接続
 conn = sqlite3.connect('famafinancial.db')
 c = conn.cursor()
