@@ -14,6 +14,7 @@ st.title(
         color: #3EBEA1;
         text-align: center;
     }
+    </style>
     """,
     unsafe_allow_html=True
 )
