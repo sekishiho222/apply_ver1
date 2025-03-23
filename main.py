@@ -5,6 +5,10 @@ import altair as alt
 import datetime
 from streamlit.column_config import NumberColumn
 
+# データベースに接続
+conn = sqlite3.connect('famafinancial.db')
+c = conn.cursor()
+
 st.title('金融資産管理アプリ')
 
 # Streamlitでカレンダーを表示
@@ -53,3 +57,19 @@ chart = (
 
 # Streamlitでグラフを表示
 st.altair_chart(chart, use_container_width=True)
+
+# データベースからユーザー一覧を取得する関数
+def fetch_users():
+    result = c.execute("SELECT * FROM users").fetchall()
+    return result
+
+# データベースからユーザー一覧を取得する関数
+def fetch_datas():
+    result = c.execute("SELECT * FROM finance").fetchall()
+    return result
+
+# 過去ログ一覧を表示
+st.write("過去ログ一覧:")
+users = fetch_datas()
+for row in users:
+    st.write(f"ID: {row[0]}, 資産/負債: {row[1]}, 金額: {row[3]}")
