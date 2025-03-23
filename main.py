@@ -5,40 +5,12 @@ import altair as alt
 import datetime
 from streamlit.column_config import NumberColumn
 
-#データベースファイル名
-db_name = 'FAMA_financial.db'
-
-#データベース接続関数
-con = sqlite3.connect(db_name)
-
-# 2.sqliteを操作するカーソルオブジェクトを作成
-cur = con.cursor()
-
 st.title('金融資産管理アプリ')
 
 # Streamlitでカレンダーを表示
 min_date = datetime.date(1900, 1, 1)
 max_date = datetime.date(2100, 12, 31)
 d = st.date_input('今日の日付を入力してください。', datetime.date(2025, 3, 22), min_value=min_date, max_value=max_date)
-
-# 抽出したいレコードのIDリスト
-record_ids = [1, 2, 3, 4, 5, 6, 7]  # 抽出したいレコードのID
-
-# 1. 複数のIDに対応するレコードを抽出し、Pandas DataFrameに読み込む
-query = "SELECT * FROM finance WHERE id IN ({})".format(','.join(['?'] * len(record_ids)))
-df = pd.read_sql_query(query, conn, params=record_ids)
-
-# 2. カラムが一致する別のテーブルにデータを挿入する
-if not df.empty:
-    # カラムが一致するか確認（例: source_tableとtarget_tableのカラムが同じ場合）
-    target_table = 'target_table'
-    
-    # DataFrameをSQLiteのテーブルに挿入
-    df.to_sql(target_table, conn, if_exists='append', index=False)
-    print(f"データを {target_table} に挿入しました。")
-else:
-    print("指定したIDのレコードが見つかりませんでした。")
-
 
 # データフレームを作成
 data = {
@@ -81,10 +53,3 @@ chart = (
 
 # Streamlitでグラフを表示
 st.altair_chart(chart, use_container_width=True)
-
-# 4.データベースに情報をコミット
-con.commit()
-
-# 5.データベースの接続を切断
-cur.close()
-con.close()
