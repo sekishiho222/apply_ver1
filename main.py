@@ -59,11 +59,6 @@ chart = (
 st.altair_chart(chart, use_container_width=True)
 
 # データベースからユーザー一覧を取得する関数
-def fetch_users():
-    result = c.execute("SELECT * FROM users").fetchall()
-    return result
-
-# データベースからユーザー一覧を取得する関数
 def fetch_datas():
     result = c.execute("SELECT * FROM finance").fetchall()
     return result
@@ -73,3 +68,6 @@ st.write("過去ログ一覧:")
 users = fetch_datas()
 for row in users:
     st.write(f"ID: {row[0]}, 資産/負債: {row[1]}, 金額: {row[3]}")
+
+# データベース接続をクローズ
+conn.close()
