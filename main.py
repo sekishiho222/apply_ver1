@@ -15,7 +15,7 @@ st.markdown(
         text-align: center;
     }
     """,
-    unsafe_allow_html=true
+    unsafe_allow_html=True
 )
 
 # データベースに接続
