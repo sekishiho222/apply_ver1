@@ -58,7 +58,7 @@ chart = (
 # Streamlitでグラフを表示
 st.altair_chart(chart, use_container_width=True)
 
-# データベースからユーザー一覧を取得する関数
+# データベースから過去ログ一覧を取得する関数
 def fetch_datas():
     result = c.execute("SELECT * FROM finance").fetchall()
     return result
