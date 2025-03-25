@@ -27,6 +27,7 @@ st.markdown(
 
 st.markdown(
     """
+    <style>
     .h1 {
         font-size: 30px;
         color: #3EBEA1;
