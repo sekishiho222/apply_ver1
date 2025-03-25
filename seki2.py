@@ -19,7 +19,7 @@ st.markdown(
     }
     </style>
     """,
-    <img src="apply-ver1/logo.jpg" height="80" width="200" style="vertical-align:middle margin-top="50" margin-bottom="50";></p>
+    <img src="apply-ver1/logo.jpg" height="80" width="200" style="vertical-align:middle margin-top="50" margin-bottom="50"></p>
     unsafe_allow_hrml=True
 )
 
