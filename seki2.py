@@ -44,7 +44,7 @@ file_path = st.file_uploader('', type=['png', 'jpg', 'jpeg'])
 img = Image.open('logo.jpg')
 st.image(img)
 original_size = img.size
-resize_width = 200
+resize_width = 100
 resized = img.resize((resize_width, int(original_size[1]/(original_size[0]/resize_width))))
 
 #アプリ名称を記載
