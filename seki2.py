@@ -1,5 +1,5 @@
 import streamlit as st
-from PIL import Image
+import base64
 import pandas as pd
 import sqlite3
 import altair as alt
@@ -8,6 +8,10 @@ from streamlit.column_config import NumberColumn
 
 #スタイルの読み込み カスタムCSS
 #ロゴをよみこみ
+image = "logo.jpg"
+image_bytes = Path(image).read_bytes()
+image_encoded = base64.b64encode(image_bytes).decode()
+
 st.markdown(
     """
     <style>
