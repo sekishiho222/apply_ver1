@@ -13,7 +13,7 @@ st.markdown(
     .header {
         font-size: 30px;
         color: white;
-        text-align: center;
+        text-align: left;
         background-color: #3EBEA1;
     }
     .image {
