@@ -8,9 +8,6 @@ from streamlit.column_config import NumberColumn
 
 #スタイルの読み込み カスタムCSS
 #ロゴをよみこみ
-image = "logo.jpg"
-image_bytes = (image).read_bytes()
-image_encoded = base64.b64encode(image_bytes).decode()
 
 st.markdown(
     """
@@ -22,15 +19,6 @@ st.markdown(
         padding-top: 50px;
         padding-bottom: 50px;
     }
-    </style>
-    <img src="data:logo/jpg;base64,{image_encoded}" height="50" width="120" style="vertical-align:left"></p>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    """
-    <style>
     .h1 {
         font-size: 30px;
         color: white;
@@ -50,6 +38,11 @@ st.markdown(
 # データベースに接続
 conn = sqlite3.connect('famafinancial.db')
 c = conn.cursor()
+
+#ロゴをよみこみ
+file_path = st.file_uploader('', type=['png', 'jpg', 'jpeg'])
+img = Image.open('<div class="header">logo.jpg</div>', unsafe_allow_html=True)
+st.image(img)
 
 #アプリ名称を記載
 st.markdown('<div class="header">金融資産管理アプリ</div>', unsafe_allow_html=True)
