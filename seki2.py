@@ -13,9 +13,8 @@ st.markdown(
     <style>
     .header {
         font-size: 30px;
-        color: white;
+        color: #3EBEA1;
         text-align: center;
-        background-color: #3EBEA1;
         padding-top: 50px;
         padding-bottom: 50px;
     }
@@ -30,8 +29,9 @@ st.markdown(
     <style>
     .h1 {
         font-size: 30px;
-        color: #3EBEA1;
+        color: white;
         text-align: left;
+        background-color: #3EBEA1;
     }
     .image {
         width: 200px;
@@ -48,10 +48,10 @@ conn = sqlite3.connect('famafinancial.db')
 c = conn.cursor()
 
 #アプリ名称を記載
-st.markdown('<div class="h1">金融資産管理アプリ</div>', unsafe_allow_html=True)
+st.markdown('<div class="header">金融資産管理アプリ</div>', unsafe_allow_html=True)
 
 #h1を追記
-st.markdown('<div class="header">　収支入力と現在保有の金融資産</div>', unsafe_allow_html=True)
+st.markdown('<div class="h1">　収支入力と現在保有の金融資産</div>', unsafe_allow_html=True)
 
 # Streamlitでカレンダーを表示
 min_date = datetime.date(1900, 1, 1)
