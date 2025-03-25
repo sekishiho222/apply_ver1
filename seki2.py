@@ -21,7 +21,8 @@ st.markdown(
     }
     </style>
     <img src=".apply-ver1/logo.jpg" height="80" width="200" style="vertical-align:middle"></p>
-    """,unsafe_allow_hrml=True
+    """,
+    unsafe_allow_html=True
 )
 
 st.markdown(
