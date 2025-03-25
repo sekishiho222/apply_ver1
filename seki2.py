@@ -114,7 +114,7 @@ chart = (
     .encode(
         x=alt.X("カテゴリ:N", title="金融資産"),
         y=alt.Y("金額:Q", title="金額（円）", scale=alt.Scale(domain=[0, max(df['現在の残高'].max() + 100000, 1500000)], nice=True)),
-        color="資産:#F9DA25"
+        color="資産:N"
     )
     .properties(width=50, height=400)
 )
