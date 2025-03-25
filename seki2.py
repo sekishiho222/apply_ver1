@@ -42,10 +42,10 @@ c = conn.cursor()
 #ロゴをよみこみ
 file_path = st.file_uploader('', type=['png', 'jpg', 'jpeg'])
 img = Image.open('logo.jpg')
+st.image(img)
 original_size = img.size
 resize_width = 100
 resized = img.resize((resize_width, int(original_size[1]/(original_size[0]/resize_width))))
-st.image(img)
 
 #アプリ名称を記載
 st.markdown('<div class="header">金融資産管理アプリ</div>', unsafe_allow_html=True)
