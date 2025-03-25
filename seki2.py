@@ -19,7 +19,7 @@ st.markdown(
         padding-bottom: 50px;
     }
     </style>
-    <img src="logo.jpg" height="80" width="200" style="vertical-align:left"></p>
+    <img src="logo.jpg" height="50" width="120" style="vertical-align:left"></p>
     """,
     unsafe_allow_html=True
 )
