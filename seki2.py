@@ -16,10 +16,12 @@ st.markdown(
         color: white;
         text-align: left;
         background-color: #3EBEA1;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
     </style>
     """,
-    <img src="apply-ver1/logo.jpg" height="80" width="200" style="vertical-align:middle margin-top="50" margin-bottom="50"></p>
+    <img src=".apply-ver1/logo.jpg" height="80" width="200" style="vertical-align:middle></p>
     unsafe_allow_hrml=True
 )
 
