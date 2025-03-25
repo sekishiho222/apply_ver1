@@ -1,5 +1,5 @@
 import streamlit as st
-import base64
+from PIL import Image
 import pandas as pd
 import sqlite3
 import altair as alt
@@ -41,7 +41,7 @@ c = conn.cursor()
 
 #ロゴをよみこみ
 file_path = st.file_uploader('', type=['png', 'jpg', 'jpeg'])
-img = Image.open('<div class="header">logo.jpg</div>', unsafe_allow_html=True)
+img = Image.open('logo.jpg')
 st.image(img)
 
 #アプリ名称を記載
