@@ -9,7 +9,7 @@ from streamlit.column_config import NumberColumn
 #スタイルの読み込み カスタムCSS
 #ロゴをよみこみ
 image = "logo.jpg"
-image_bytes = Path(image).read_bytes()
+image_bytes = (image).read_bytes()
 image_encoded = base64.b64encode(image_bytes).decode()
 
 st.markdown(
