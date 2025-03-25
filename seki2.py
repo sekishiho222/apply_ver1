@@ -7,6 +7,7 @@ import datetime
 from streamlit.column_config import NumberColumn
 
 # スタイルの読み込み カスタムCSS
+#ロゴをよみこみ
 st.markdown(
     """
     <style>
@@ -15,6 +16,19 @@ st.markdown(
         color: white;
         text-align: left;
         background-color: #3EBEA1;
+    }
+    </style>
+    """,
+    <img src="apply-ver1/logo.jpg" height="80" width="200" style="vertical-align:middle margin-top="50" margin-bottom="50" ;></p>
+    unsafe_allow_hrml=True
+)
+
+st.markdown(
+    """
+    .h1 {
+        font-size: 30px;
+        color: #3EBEA1;
+        text-align: left;
     }
     .image {
         width: 200px;
@@ -30,20 +44,11 @@ st.markdown(
 conn = sqlite3.connect('famafinancial.db')
 c = conn.cursor()
 
-#ロゴをよみこみ
-st.markdown(
-    """"
-    <style>
-    <img src="apply-ver1/logo.jpg" height="80" width="200" style="vertical-align:middle margin-top="50" margin-bottom="50" ;></p>
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-file_path = st.file_uploader('', type=['png', 'jpg', 'jpeg'])
-img = Image.open('logo.jpg')
-
 #アプリ名称を記載
-st.markdown('<div class="header">　金融資産管理アプリ</div>', unsafe_allow_html=True)
+st.markdown('<div class="h1">金融資産管理アプリ</div>', unsafe_allow_html=True)
+
+#h1を追記
+st.markdown('<div class="h1">　収支入力と現在保有の金融資産</div>', unsafe_allow_html=True)
 
 # Streamlitでカレンダーを表示
 min_date = datetime.date(1900, 1, 1)
