@@ -6,7 +6,7 @@ import altair as alt
 import datetime
 from streamlit.column_config import NumberColumn
 
-# スタイルの読み込み カスタムCSS
+#スタイルの読み込み カスタムCSS
 #ロゴをよみこみ
 st.markdown(
     """
@@ -14,13 +14,13 @@ st.markdown(
     .header {
         font-size: 30px;
         color: white;
-        text-align: left;
+        text-align: center;
         background-color: #3EBEA1;
         padding-top: 50px;
         padding-bottom: 50px;
     }
     </style>
-    <img src=".apply-ver1/logo.jpg" height="80" width="200" style="vertical-align:middle"></p>
+    <img src="logo.jpg" height="80" width="200" style="vertical-align:left"></p>
     """,
     unsafe_allow_html=True
 )
@@ -48,7 +48,7 @@ conn = sqlite3.connect('famafinancial.db')
 c = conn.cursor()
 
 #アプリ名称を記載
-st.markdown('<div class="h1">金融資産管理アプリ</div>', unsafe_allow_html=True)
+st.markdown('<div class="header">金融資産管理アプリ</div>', unsafe_allow_html=True)
 
 #h1を追記
 st.markdown('<div class="h1">　収支入力と現在保有の金融資産</div>', unsafe_allow_html=True)
