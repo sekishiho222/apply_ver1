@@ -117,6 +117,7 @@ chart = (
         color=alt.color("資産",scale=alt.Scale(range=["#BF99ED", "#F9DA25", "#40E8CB"]),
     )
     .properties(width=50, height=400)
+    )
 )
 
 # Streamlitでグラフを表示
