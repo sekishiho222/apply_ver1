@@ -31,12 +31,19 @@ conn = sqlite3.connect('famafinancial.db')
 c = conn.cursor()
 
 #ロゴをよみこみ
+st.markdown(
+    """"
+    <img src="apply-ver1/logo.jpg" height="80" width="200" style="vertical-align:middle margin-top="50" margin-bottom="50" ;></p>
+    """,
+    unsafe_allow_html=True
+)
 file_path = st.file_uploader('', type=['png', 'jpg', 'jpeg'])
 img = Image.open('logo.jpg')
-st.image(img)
+
+st.markdown('<div class="header">st.image(img)</div>', unsafe_allow_html=True)
 
 #アプリ名称を記載
-st.markdown('<div class="header">金融資産管理アプリ</div>', unsafe_allow_html=True)
+st.markdown('<div class="header">　金融資産管理アプリ</div>', unsafe_allow_html=True)
 
 # Streamlitでカレンダーを表示
 min_date = datetime.date(1900, 1, 1)
