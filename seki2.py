@@ -16,8 +16,8 @@ st.markdown(
         font-size: 30px;
         color: #3EBEA1;
         text-align: center;
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
     .h1 {
         font-size: 30px;
